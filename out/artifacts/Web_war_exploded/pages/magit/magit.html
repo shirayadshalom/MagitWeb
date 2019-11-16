@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Magit</title>
+    <link rel="icon" href="icon1.png">
+    <script src="../../common/jquery-2.0.3.min.js"></script>
+    <script src="../../common/context-path-helper.js"></script>
+    <script src="../../common/bootstrap.js"></script>
+    <script src="magit.js"></script>
+    <link rel="stylesheet" href="../../common/bootstrap.min.css">
+    <link rel="stylesheet" href="../../common/userInformation.css">
+
+
+</head>
+<body>
+
+<img src="chat.png" alt="chat" width="60" height="45" title="chat" onclick="openForm()" ></img>
+<br>
+
+<a href="../../magit/logout" input type="button" value="Logout" class="login">Logout</a>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="span5"><h2>notifications</h2>
+
+            <div class="notice fork"><p id="notice_fork">This is a fork notice!!</p></div>
+
+            <div class="notice pr"><p id="notice_PR">This is a PR notice!!</p></div>
+
+        </div>
+
+
+        <div class="span3">
+
+
+            <br> <br> <br>
+
+            <div class="list-type1">
+                <ol id="userslist">
+
+                </ol>
+
+            </div>
+        </div>
+
+        <div class="span1 offset3">
+
+            <br>
+            <form id="uploadForm" action="../../magit/upload" enctype="multipart/form-data" method="POST" align="center"><br>
+                <input type="file"  align="center"  id="file1" target="_blank" name="file1"> <br>
+                <input type="Submit" class="example_b" align="center" target="_blank"  value="Upload File">
+            </form>
+
+        </div>
+
+
+
+
+
+    </div>
+
+</div>
+
+
+    <h2>Repositories</h2>
+<div class="table-wrapper">
+    <table id="RepoTable" class="fl-table" >
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Active branch</th>
+            <th>Number of branches</th>
+            <th>Last commit date</th>
+            <th>Last Commit message</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+
+
+<div class="form-popup" id="myChat">
+    <div>
+        <div class="col-xs-4">
+            <div class="content">
+                <div id="chatwindow">
+                    <h4>Chat</h4>
+                    <div id="chatarea" class="span6"></div>
+                    <form id="chatform" method="POST" action="sendChat">
+                        <input type="text" id="userstring" name="userstring"/>
+                        <input type="submit" value="Send"/>
+                    </form>
+                    <img src="close1.png" align="center" alt="close"  title="Click to close" width="40" height="45" onclick="closeForm()"; ></img>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="659.0" prefWidth="1312.0" styleClass="background" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="components.main.MagitController">
+   <content>
+      <BorderPane id="background" layoutX="20.0" layoutY="15.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="1298.0" styleClass="background" translateX="1.0">
+         <bottom>
+            <GridPane prefHeight="25.0" prefWidth="1288.0" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label id="labelfont" fx:id="selectedUserNameLabel" layoutX="30.0" prefHeight="25.0" prefWidth="596.0" styleClass="labelfont" text="User name: Administrator" />
+                        <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Resources/user.png" />
+                           </image>
+                        </ImageView>
+                     </children></Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <Label id="labelfont" fx:id="selectedFileNameLabel" prefHeight="25.0" prefWidth="260.0" styleClass="labelfont" text="RepoPath:" />
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+         </bottom>
+         <left>
+            <SplitPane id="paneBackground" dividerPositions="0.5" orientation="VERTICAL" prefHeight="521.0" prefWidth="632.0" BorderPane.alignment="CENTER">
+               <items>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TreeView fx:id="wcTree" prefHeight="298.0" prefWidth="632.0" />
+                     </children>
+                  </Pane>
+                  <AnchorPane prefHeight="280.0" prefWidth="630.0">
+                     <children>
+                        <Label id="labelfont" fx:id="blobNameLabel" layoutY="14.0" prefHeight="26.0" prefWidth="229.0" styleClass="labelfont" AnchorPane.topAnchor="14.0" />
+                        <TextArea fx:id="blobContentTextArea" layoutY="15.0" prefHeight="293.0" prefWidth="630.0" />
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+         </left>
+         <top>
+            <Pane prefHeight="35.0" prefWidth="1288.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ToolBar prefHeight="28.0" prefWidth="1311.0" style="-fx-background-color: white;">
+                     <items>
+                        <MenuBar layoutX="1.0" layoutY="1.0" prefHeight="31.0" prefWidth="381.0" style="-fx-background-color: white;">
+                           <menus>
+                              <Menu fx:id="repositoryButton" mnemonicParsing="false" text="Repository">
+                                 <items>
+                                    <MenuItem fx:id="setActiveUserNameButton" mnemonicParsing="false" onAction="#setActiveUserName" text="Change user name" />
+                                    <MenuItem fx:id="LoadFromXMLButton" mnemonicParsing="false" onAction="#LoadFromXML" text="Load from XML" />
+                                    <MenuItem fx:id="createRepoButton" mnemonicParsing="false" onAction="#createRepo" text="Create new repository" />
+                                    <MenuItem fx:id="changeActiveRepoButton" mnemonicParsing="false" onAction="#changeActiveRepo" text="Switch repository" />
+                                 </items>
+                              </Menu>
+                              <Menu fx:id="commitMainMenuButton" mnemonicParsing="false" text="Commit">
+                                 <items>
+                                    <MenuItem fx:id="ShowCurrentBranchButton" mnemonicParsing="false" onAction="#ShowCurrentBranch" text="Show current commit file system information" />
+                                    <MenuItem fx:id="showStatusButton" mnemonicParsing="false" onAction="#showStatus" text="Working copy status" />
+                                    <MenuItem fx:id="commitMenuButton" mnemonicParsing="false" onAction="#commit" text="Commit" />
+                                 </items>
+                              </Menu>
+                              <Menu fx:id="branchMenuButton" mnemonicParsing="false" text="Branch">
+                                 <items>
+                                    <MenuItem fx:id="showBranchesButton" mnemonicParsing="false" onAction="#showBranches" text="List available branches" />
+                                    <MenuItem fx:id="createNewBranchButton" mnemonicParsing="false" onAction="#createNewBranch" text="Create new branch" />
+                                    <MenuItem fx:id="deleteBranchButton" mnemonicParsing="false" onAction="#deleteBranch" text="Delete branch" />
+                                    <MenuItem fx:id="checkoutBranchButton" mnemonicParsing="false" onAction="#checkoutBranch" text="Checkout branch" />
+                                    <MenuItem fx:id="showHistoryButton" mnemonicParsing="false" onAction="#ShowHistoryBranches" text="Show current branch history" />
+                                    <MenuItem fx:id="resetBranchButton" mnemonicParsing="false" onAction="#resetBranch" text="Reset branch" />
+                                 </items>
+                              </Menu>
+                              <Menu fx:id="remoteMenuButton" mnemonicParsing="false" text="Remote">
+                                 <items>
+                                    <MenuItem fx:id="cloneButton" mnemonicParsing="false" onAction="#cloneAction" text="Clone" />
+                                    <MenuItem fx:id="pullButton1" mnemonicParsing="false" onAction="#pullButtonAction" text="Pull" />
+                                    <MenuItem fx:id="pullButton11" mnemonicParsing="false" onAction="#pushButtonAction" text="Push" />
+                                    <MenuItem fx:id="pushNewBranchButton" mnemonicParsing="false" onAction="#pushNewBranchButtonAction" text="Push new branch" />
+                                 </items>
+                              </Menu>
+                              <Menu fx:id="viewButton" mnemonicParsing="false" text="View">
+                                 <items>
+                                    <MenuItem fx:id="skinButton" mnemonicParsing="false" onAction="#changeSkin" text="Change Skin " />
+                                 </items>
+                              </Menu>
+                           </menus>
+                        </MenuBar>
+                        <Pane prefHeight="6.0" prefWidth="559.0">
+                           <children>
+                              <Button fx:id="pullButton" layoutX="530.0" layoutY="1.0" mnemonicParsing="false" onAction="#pullButtonAction" prefHeight="29.0" prefWidth="80.0" style="-fx-background-color: white;" text="Pull">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Resources/down.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="commitButton" layoutX="605.0" layoutY="1.0" mnemonicParsing="false" onAction="#commit" prefHeight="29.0" prefWidth="111.0" style="-fx-background-color: white;" text="Commit">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Resources/commit.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="mergeButton" layoutX="700.0" layoutY="1.0" mnemonicParsing="false" onAction="#mergeButtonAction" prefHeight="29.0" prefWidth="91.0" style="-fx-background-color: white;" text="Merge">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Resources/merge.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="pushButton" layoutX="450.0" layoutY="1.0" mnemonicParsing="false" onAction="#pushButtonAction" prefHeight="29.0" prefWidth="80.0" style="-fx-background-color: white;" text="Push">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Resources/up.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="fetchButton" layoutX="371.0" layoutY="1.0" mnemonicParsing="false" onAction="#fetchButtonAction" prefHeight="29.0" prefWidth="80.0" style="-fx-background-color: white;" text="Fetch">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Resources/fetch.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </Pane>
+                     </items>
+                  </ToolBar>
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <VBox id="VboxBackground" prefHeight="589.0" prefWidth="57.0" styleClass="VboxBackground" BorderPane.alignment="CENTER">
+               <children>
+                  <Button id="VboxButton" fx:id="refreshButton" mnemonicParsing="false" onAction="#refreshButtonAction" prefHeight="33.0" prefWidth="92.0" styleClass="VboxButton" text="Refresh">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Resources/refresh.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button id="VboxButton" fx:id="showCommitFileButton" mnemonicParsing="false" onAction="#showCommitFileButtonAction" prefHeight="62.0" prefWidth="90.0" styleClass="VboxButton" text="Commit's file&#10; system" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button id="VboxButton" fx:id="showPrevSha1Button" layoutX="10.0" layoutY="143.0" mnemonicParsing="false" onAction="#showprevsha1ButtonAction" prefHeight="49.0" prefWidth="90.0" styleClass="VboxButton" text="Show prev&#10; sha1" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button id="VboxButton" fx:id="showDeltaButton" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#showDeltaButtonAction" prefHeight="56.0" prefWidth="90.0" styleClass="VboxButton" text="Show &#10;commit &#10;delta" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </center>
+         <right>
+            <TabPane prefHeight="589.0" prefWidth="579.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab text="text">
+                     <content>
+                        <SplitPane dividerPositions="0.6060786650774731" orientation="VERTICAL" prefHeight="521.0" prefWidth="566.0">
+                           <items>
+                              <Pane prefHeight="265.0" prefWidth="579.0">
+                                 <children>
+                                    <TreeView id="label" fx:id="commitTree" prefHeight="330.0" prefWidth="582.0" styleClass="label" />
+                                 </children>
+                              </Pane>
+                              <GridPane prefHeight="270.0" prefWidth="579.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Pane prefHeight="260.0" prefWidth="579.0">
+                                       <children>
+                                          <AnchorPane prefHeight="280.0" prefWidth="630.0">
+                                             <children>
+                                                <Label id="labelfont" fx:id="branchOrCommitNameLabel" layoutY="14.0" prefHeight="26.0" prefWidth="229.0" styleClass="labelfont" AnchorPane.topAnchor="14.0" />
+                                                <TextArea fx:id="branchOrCommitContentTextArea" layoutY="-3.0" prefHeight="223.0" prefWidth="583.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </GridPane>
+                           </items>
+                        </SplitPane>
+                     </content>
+                </Tab>
+                <Tab text="graphic">
+                     <content>
+                        <SplitPane dividerPositions="0.6836124401913876" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                           <items>
+                              <Pane prefHeight="367.0" prefWidth="579.0">
+                                 <children>
+                                    <ScrollPane fx:id="graphicScrollPane" layoutY="1.0" prefHeight="377.0" prefWidth="578.0" />
+                                 </children>
+                              </Pane>
+                              <ScrollPane prefHeight="275.0" prefWidth="534.0">
+                                 <content>
+                                    <TextArea fx:id="sha1OrdeltaTextArea" prefHeight="259.0" prefWidth="571.0" />
+                                 </content>
+                              </ScrollPane>
+                           </items>
+                        </SplitPane>
+                     </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </right>
+      </BorderPane>
+   </content>
+</ScrollPane>

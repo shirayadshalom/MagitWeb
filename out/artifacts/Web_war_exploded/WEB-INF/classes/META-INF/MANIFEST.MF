@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: commons-codec-1.2.jar AncestorFinder.jar org.apache.common
+ s.io-2.4.jar commons-io-2.4.jar fxgraph-0.0.3.jar org.abego.treelayou
+ t.core-1.0.3.jar
+

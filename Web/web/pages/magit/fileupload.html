@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="../../common/jquery-2.0.3.min.js"></script>
+
+        <script type="text/javascript" language="javascript">
+            // let's start the jQuery while I wait.
+            // step 1: onload - capture the submit event on the form.
+            $(function() { // onload...do
+                $("#uploadForm").submit(function() {
+
+                    var file1 = this[0].files[0];
+
+                    var formData = new FormData();
+                    formData.append("fake-key-1", file1);
+
+                    $.ajax({
+                        method:'POST',
+                        data: formData,
+                        url: this.action,
+                        processData: false, // Don't process the files
+                        contentType: false, // Set content type to false as jQuery will tell the server its a query string request
+                        timeout: 4000,
+                        error: function(e) {
+                            console.error("Failed to submit");
+                            $("#result").text("Failed to get result from server " + e);
+                        },
+                        success: function(r) {
+                            $("#result").text(r);
+                        }
+                    });
+
+                    // return value of the submit operation
+                    // by default - we'll always return false so it doesn't redirect the user.
+                    return false;
+                })
+            })
+        </script>
+
+    </head>
+    <body>
+    <h3>Select a File:</h3>
+    <form id="uploadForm" action="../../magit/upload" enctype="multipart/form-data" method="POST">
+        <input type="file" name="file1"><br>
+        <input type="Submit" value="Upload File"><br>
+    </form>
+
+    <div id="result">
+    </div>
+
+        <a href="../../../../../../Desktop/12.%20JQuery%20Introduction/web/index.html">Home</a>
+
+    </body>
+</html>

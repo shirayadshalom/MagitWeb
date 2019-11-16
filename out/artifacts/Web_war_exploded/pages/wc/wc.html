@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Magit</title>
+    <link rel="icon" href="icon4.png">
+    <script src="../../common/jquery-2.0.3.min.js"></script>
+    <script src="../../common/context-path-helper.js"></script>
+    <script src="../../common/bootstrap.js"></script>
+    <script src="wc.js"></script>
+    <link rel="stylesheet" href="../../common/bootstrap.min.css">
+    <link rel="stylesheet" href="wc.css">
+
+</head>
+<body>
+<img src="back.png" alt="goBack"  title="Click to go back" width="50" height="35"  onclick=goBack(); ></img>
+<img src="new.png" alt="delete"  title="Create a new file" width="50" height="35" onclick=CreatenewFile(); ></img>
+<img src="delete.png" alt="delete"  title="Select one of the files to delete" width="50" height="35" onclick=onDelete(); ></img><br>
+
+<div class="table-wrapper">
+    <table id="WCTable" class="fl-table" >
+        <thead>
+        <tr>
+            <th>Path</th>
+            <th>Type</th>
+
+        </tr>
+        </thead>
+        <tbody >
+        <tr>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<div class="form-popup" id="myForm1">
+<textarea id="blob" name="text" cols="50" rows="80">Add multiple lines of text here and ccgf watch the scrollbars grow...</textarea>
+<img src="save.png" alt="save"  title="Click to save" width="40" height="45" onclick=saveFile(); ></img>
+<img src="close.png" alt="close"  title="Click to close" width="40" height="45" onclick="closeForm1()"; ></img>
+
+</div>
+
+
+<div class="form-popup" id="myForm">
+    <form  id="usrform">Path for the file: <input type="text"  id="newPath" name="newPath"></form>
+    <textarea id="textbox">Type something here</textarea><br>
+    <img src="save.png" alt="save"  title="Click to save" width="40" height="45" onclick=saveNewFile(); ></img>
+    <img src="close.png" alt="close"  title="Click to close" width="40" height="45" onclick="closeForm()"; ></img>
+</div>
+
+
+
+</body>
+</html>

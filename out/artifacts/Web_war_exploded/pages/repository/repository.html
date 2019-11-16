@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Magit</title>
+    <link rel="icon" href="icon2.png">
+    <script src="../../common/jquery-2.0.3.min.js"></script>
+    <script src="../../common/context-path-helper.js"></script>
+    <script src="../../common/bootstrap.js"></script>
+    <script src="repository.js"></script>
+    <link rel="stylesheet" href="../../common/bootstrap.min.css">
+    <link rel="stylesheet" href="repository.css">
+
+
+</head>
+<body>
+
+<header id="header">
+    <nav class="links" style="--items: 9;">
+
+        <a   href="#"><img src="chat11.png" alt="chat" width="50" height="35" title="chat" onclick="openForm2()" ></img></a>
+        <a   href="#"><img src="back1.png" alt="goBack" title="Click to go back" width="50" height="35" onclick=goBack(); ></img></a>
+        <a  id="newBranch" href="#"><img src="newbranch.jpg" alt="new" width="30" height="15" ></img>New branch</a>
+        <a  id="checkOut" href="#">Checkout</a>
+        <a  id="showWC" href="#">Show WC </a>
+        <a id="commit" href="#"><img src="commit.jpg" alt="delete" width="30" height="15" ></img>Commit</a>
+        <a id="pull" href="#"><img src="pull.jpg" alt="pull" width="30" height="15" ></img>Pull</a>
+        <a id="pushNewBranch" href="#"><img src="push.jpg" alt="push" width="30" height="15" ></img>Push new branch</a>
+        <a id="pr" href="#">Create PR</a>
+
+        <span class="line"></span>
+    </nav>
+</header>
+ <br><br><br><br><br><br>
+
+
+<div class="container-fluid">
+<div class="row">
+    <div class="span5"><h2>notifications</h2>
+
+        <div class="notice fork"><p id="notice_fork">This is a fork notice!!</p></div>
+
+        <div class="notice pr"><p id="notice_PR">This is a PR notice!!</p></div>
+
+
+    </div>
+    <br> <br>
+
+    <div class="span5 offset2">
+
+    <h2 id="reponame" align="center"  style="color: #141414"> Repository name</h2>
+
+    <h2 id="RRname" align="center"  style="color: #141414"> RR name: -</h2>
+
+    </div>
+
+</div>
+
+
+<br> <br> <br>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="span5"><h2>Branches</h2>
+            <div class="list-type1">
+                <ol id="brancheslist">
+                </ol>
+            </div>
+        </div>
+
+        <!--
+                <div class="span1 offset1">
+                    <br>
+
+                    <div class="button_cont" align="center"><a id="deleteBranch" class="example_b"  target="_blank" rel="nofollow noopener">Delete branch</a></div>
+                    <div class="button_cont" align="center"><a  id="newBranch" class="example_b"  target="_blank" rel="nofollow noopener">New branch</a></div>
+                    <div class="button_cont" align="center"><a  id="checkOut" class="example_b" target="_blank" rel="nofollow noopener">Checkout </a></div>
+                    <div class="button_cont" align="center"><a  id="showWC" class="example_b" target="_blank" rel="nofollow noopener">Show WC </a></div>
+                    <div class="button_cont" align="center"><a  id="commit" class="example_b" target="_blank" rel="nofollow noopener">Commit </a></div>
+                    <div class="button_cont" align="center"><a  id="pull" class="example_b" target="_blank" rel="nofollow noopener">Pull </a></div>
+                    <div class="button_cont" align="center"><a  id="pushNewBranch" class="example_b" target="_blank" rel="nofollow noopener">Push new branch</a></div>
+                    <div class="button_cont" align="center"><a  id="create pr" class="example_b" target="_blank" rel="nofollow noopener">create pr</a></div>
+
+
+                </div>
+
+         -->
+                <div class="span5">
+                    <h2>Head branch</h2>
+                    <div class="table-wrapper">
+                        <table id="ComTable" class="fl-table" >
+                            <thead>
+                            <tr>
+                                <th>SHA-1</th>
+                                <th>Message</th>
+                                <th>Commit date</th>
+                                <th>Creator</th>
+                                <th>List of branches</th>
+                            </tr>
+                            </thead>
+                            <tbody >
+                            <tr>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="span5"><h2>Changes that have not been commited</h2>
+
+                    <div class="notice info" ><p id="updated">Updated files:</p></div>
+
+                    <div class="notice warning" ><p id="created">Created files:</p></div>
+
+                    <div class="notice error" ><p id="deleted">Deleted files :</p></div>
+
+
+                </div>
+
+                <div class="span7"><h2>PR management</h2>
+                    <div class="table-wrapper">
+                        <table id="PRlist" class="fl-table" >
+                            <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>ID</th>
+                                <th>Target Branch </th>
+                                <th>Base Branch </th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-popup" id="myRR">
+            <h2 id="userNameRR"> Branches of user-RR</h2>
+            <div class="list-type1">
+                <ol id="RRbrancheslist">
+                </ol>
+            </div>
+            <br>
+            <img src="closee.png" align="center" alt="close"  title="Click to close" width="40" height="45" onclick="closeForm()"; ></img>
+
+        </div>
+
+        <div class="form-popup" id="myLR">
+            <h2 id="userNameLR"> Branches of user-RR</h2>
+            <div class="list-type1">
+                <ol id="LRbrancheslist">
+                </ol>
+            </div>
+            <br>
+            <img src="closee.png" align="center" alt="close"  title="Click to close" width="40" height="45" onclick="closeForm1()"; ></img>
+
+        </div>
+
+</div>
+
+<div class="form-popup" id="myChat">
+    <div>
+        <div class="col-xs-4">
+            <div class="content">
+                <div id="chatwindow">
+                    <h4>Chat</h4>
+                    <div id="chatarea" class="span6"></div>
+                    <form id="chatform" method="POST" action="sendChat">
+                        <input type="text" id="userstring" name="userstring"/>
+                        <input type="submit" value="Send"/>
+                    </form>
+                    <img src="closee.png" align="center" alt="close"  title="Click to close" width="40" height="45" onclick="closeForm4()"; ></img>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Magit</title>
+        <link rel="icon" href="iconMagit.png">
+
+        <!-- Link the Bootstrap (from twitter) CSS framework in order to use its classes-->
+        <link rel="stylesheet" href="common/bootstrap.min.css">
+
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,700,700i');
+            html,body{
+                margin:0;
+                height:120%;
+                font-family: 'Josefin Sans', sans-serif;
+
+            }
+            .header{
+                position:relative;
+                overflow:hidden;
+                display:flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: flex-start;
+                align-content: flex-start;
+                height:50vw;
+                min-height:400px;
+                max-height:550px;
+                min-width:300px;
+                color:#eee;
+            }
+            .header:after{
+                content:"";
+                width:100%;
+                height:100%;
+                position:absolute;
+                bottom:0;
+                left:0;
+                z-index:-1;
+            }
+            .header:before{
+                content:"";
+                width:100%;
+                height:100%;
+                position:absolute;
+                top:0;
+                left:0;
+                transform: translateZ(0);
+                background: #e7dee5 url(MagitHub.png) center no-repeat;
+                background-size:cover;
+                z-index:-1
+            }
+            .header a{
+                color: #141414
+            }
+
+            .logo{
+                border:2px solid #141414;
+                border-radius:3px;
+                text-decoration:none;
+                display:inline-flex;
+                align-items:center;
+                align-content:center;
+                margin:20px;
+                padding:0px 10px;
+                font-weight:600;
+                font-size:1.2em;
+                line-height:1;
+                box-sizing:border-box;
+                height:40px
+            }
+            .sides, .info{
+                flex: 0 0 auto;
+                width:50%
+            }
+
+            .info h4, .meta{
+                font-size:0.7em
+            }
+
+            @keyframes grow{
+                0% { transform:scale(1)}
+                50% { transform:scale(1.2)}
+            }
+            .content{
+                padding:5% 10%;
+                text-align:justify
+            }
+            </style>
+
+    </head>
+
+    <body style="margin-left: 20px;">
+    <div class="header">
+        <div class="sides">
+            <a href="pages/signup/signup.html" class="logo">Go to Magit!</a>
+        </div>
+        <!--
+        <div class="info">
+            <h1>You are about to enter the Magit!!</h1>
+        </div>
+        -->
+    </div>
+    <section class="content">
+        <p>Itamar Weller 205430291 <br> Shira Yad Shalom 315780486</p>
+    </section>
+    </body>
+</html>
+
+
+<!--<h1>You are about to enter the Magit!!!</h1>
+        <a href="pages/signup/signup.html" class="btn btn-info btn-lg active" role="button">Go to Magit!</a> -->

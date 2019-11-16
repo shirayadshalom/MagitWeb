@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact name="GUI:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/GUI_jar</output-path>
+    <root id="root">
+      <element id="archive" name="GUI.jar">
+        <element id="module-output" name="GUI" />
+      </element>
+      <element id="library" level="project" name="apache-codec:commons-codec:1.2" />
+      <element id="library" level="project" name="AncestorFinder" />
+      <element id="library" level="project" name="org.apache.directory.studio:org.apache.commons.io:2.4" />
+      <element id="library" level="project" name="com.sirolf2009:fxgraph:0.0.3" />
+      <element id="module-output" name="Engine" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Magit</title>
+    <link rel="icon" href="icon5.png">
+    <script src="../../common/jquery-2.0.3.min.js"></script>
+    <script src="../../common/context-path-helper.js"></script>
+    <script src="../../common/bootstrap.js"></script>
+    <script src="pr.js"></script>
+    <link rel="stylesheet" href="../../common/bootstrap.min.css">
+    <link rel="stylesheet" href="pr.css">
+
+</head>
+<body>
+
+<div class="table-wrapper">
+    <table id="ComTable" class="fl-table" >
+        <thead>
+        <tr>
+        <tr>
+            <th>SHA-1</th>
+            <th>Message</th>
+            <th>Commit date</th>
+            <th>Creator</th>
+            <th>List of branches</th>
+        </tr>
+        </tr>
+        </thead>
+        <tbody >
+        <tr>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<div class="form-popup" id="myList">
+<div class="table-wrapper">
+    <table id="changesList" class="fl-table" >
+            <thead>
+            <tr>
+                <th>Update / Delete / Create</th>
+                <th>Path</th>
+                <th>Type</th>
+
+            </tr>
+            </thead>
+            <tbody >
+            <tr>
+            </tr>
+
+            </tbody>
+        </table>
+</div>
+<br>
+<img src="close5.png" align="center" alt="close"  title="Click to close" width="40" height="45" onclick="closeForm()"; ></img>
+
+</div>
+
+
+<div class="button_cont" align="center"><a class="example_b" id="accept" target="_blank" rel="nofollow noopener">Accept</a></div>
+<div class="button_cont" align="center"><a class="example_a" id="reject"  target="_blank" rel="nofollow noopener">Reject</a></div>
+
+<div class="form-popup" id="myForm1">
+    <textarea id="blob" name="text" cols="50" rows="80">Add multiple lines of text here and ccgf watch the scrollbars grow...</textarea>
+    <img src="close7.png" alt="close"  title="Click to close" width="40" height="45" onclick="closeForm1()"; ></img>
+
+</div>
+
+</body>
+</html>

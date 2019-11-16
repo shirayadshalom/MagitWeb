@@ -1,0 +1,26 @@
+.VboxButton {
+    -fx-font: 10px "Cambria";
+    -fx-padding: 10;
+    -fx-background-color: #FFDAB9;
+}
+
+.labelfont{
+    -fx-font: 12px "Comic Sans MS";
+    -fx-padding: 10;
+}
+
+.VboxBackground{
+    -fx-background-color: #FFC0CB;
+}
+
+.paneBackground{
+    -fx-background-color: #e0dde3;
+}
+
+.background {
+    -fx-background-color: #FFC0CB;
+}
+
+
+
+

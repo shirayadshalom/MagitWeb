@@ -1,0 +1,26 @@
+.VboxButton {
+    -fx-font: 8.5px "Lucida Calligraphy";
+    -fx-text-color: #4620b4;
+    -fx-padding: 10;
+    -fx-background-color: #cff1ff;
+}
+
+.labelfont{
+    -fx-font: 10px "Lucida Calligraphy";
+    -fx-text-color: #4620b4;
+    -fx-padding: 10;
+}
+
+.VboxBackground{
+    -fx-background-color: #8aaaff;
+}
+
+.paneBackground{
+    -fx-background-color: #e0dde3;
+}
+
+.background {
+    -fx-background-color: #8aaaff;
+}
+
+
